@@ -3,17 +3,8 @@
 var name; 
 var connectedUser;
  
-var loc = window.location, new_uri;
-if (loc.protocol === "https:") {
-    new_uri = "wss:";
-} else {
-    new_uri = "ws:";
-}
-new_uri += "//" + loc.host;
-new_uri += loc.pathname + "/to/ws";
-
-//connecting to our signaling server
-var conn = new WebSocket(new_uri);
+//connecting to our signaling server 
+var conn = new WebSocket('ws://10.0.0.134:8888');
  
 conn.onopen = function () { 
    console.log("Connected to the signaling server"); 
